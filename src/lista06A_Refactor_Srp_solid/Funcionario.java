@@ -1,6 +1,6 @@
 package lista06A_Refactor_Srp_solid;
 
-public abstract class Funcionario {
+public abstract class Funcionario implements Reembolsavel {
 
     private String nome, cpf, rg, orgaoLotacao;
 
@@ -14,7 +14,8 @@ public abstract class Funcionario {
         this.salario = salario;
     }
 
-    abstract void aumentarSalario();
+
+    abstract double getPercentualReajuste();
 
 
     public String getNome() {

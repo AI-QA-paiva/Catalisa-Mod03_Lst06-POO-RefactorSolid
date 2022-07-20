@@ -1,9 +1,6 @@
 package lista06A_Refactor_Srp_solid;
 
-import java.util.HashSet;
-import java.util.Set;
-
-public class Estagiario implements Reembolso{
+public class Estagiario implements Reembolsavel {
 
     private String nomeEstagiario;
     private double valorBolsa;
@@ -14,17 +11,12 @@ public class Estagiario implements Reembolso{
         this.valorBolsa = valorBolsa;
     }
 
-    @Override
-    public void calcularReembolso() {
-        System.out.println("O Valor de R$ (....), referente a (....), foi Reembolsado com Sucesso!");
-    }
 
-
-    public String getNomeEstagiario() {
+    public String getNome() {
         return nomeEstagiario;
     }
 
-    public void setNomeEstagiario(String nomeEstagiario) {
+    public void setNome(String nomeEstagiario) {
         this.nomeEstagiario = nomeEstagiario;
     }
 

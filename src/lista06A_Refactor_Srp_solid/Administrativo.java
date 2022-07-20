@@ -3,7 +3,7 @@ package lista06A_Refactor_Srp_solid;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Administrativo extends Funcionario implements Reembolso{
+public class Administrativo extends Funcionario {
 
     String funcaoAdm, senioridade;
 
@@ -15,18 +15,9 @@ public class Administrativo extends Funcionario implements Reembolso{
         this.senioridade = senioridade;
     }
 
-
     @Override
-    void aumentarSalario() {
-        double salarioAdm = getSalario() + (getSalario() * 0.10);
-        setSalario(salarioAdm);
-
-    }
-
-    @Override
-    public void calcularReembolso() {
-        System.out.println("O Valor de R$ (....), referente a (....), foi Reembolsado com Sucesso!");
-
+    double getPercentualReajuste() {
+        return 0.10;
     }
 
     public String getFuncaoAdm() {

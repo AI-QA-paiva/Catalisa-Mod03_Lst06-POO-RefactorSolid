@@ -3,7 +3,7 @@ package lista06A_Refactor_Srp_solid;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Professor extends Funcionario implements Reembolso{
+public class Professor extends Funcionario {
 
     private String nivelGraduacao, disciplinaEnsina;
     private int quantAlunos, quantTurmas;
@@ -26,17 +26,12 @@ public class Professor extends Funcionario implements Reembolso{
     }
 
 
-
     //método herdado da classe abstrata Funcionario
-    @Override
-    void aumentarSalario() {
-        double salarioProf = getSalario() + (getSalario() * 0.10);
-        setSalario(salarioProf);
-    }
+
 
     @Override
-    public void calcularReembolso() {
-        System.out.println("O Valor de R$ (....), referente a (....), foi Reembolsado com Sucesso!");
+    double getPercentualReajuste() {
+        return 0.10;
 
     }
 
