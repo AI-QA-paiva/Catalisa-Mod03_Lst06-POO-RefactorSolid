@@ -26,6 +26,7 @@ public class MainTeste {
         System.out.println("Disciplina ministrada: "+professor1.getDisciplinaEnsina());
         System.out.println();
         professor1.adicionaTurma(turma);
+        System.out.println("A turma adicionada foi: "+professor1.getTurmasEscolhidas());
         calculadorReembolso.calcular(professor1);
         calculadorReajusteSalarial.reajustar(professor1);
         System.out.println("O novo salário é de R$ "+professor1.getSalario());
@@ -42,7 +43,11 @@ public class MainTeste {
         System.out.println("Disciplina ministrada: "+professor2.getDisciplinaEnsina());
         System.out.println();
         professor2.adicionaTurma(turma);
+        System.out.println("A turma adicionada foi: "+professor2.getTurmasEscolhidas());
         calculadorReembolso.calcular(professor2);
+        calculadorReajusteSalarial.reajustar(professor2);
+        System.out.println("O novo salário é de R$ "+professor2.getSalario());
+
 
         Coordenador coordenador1 = new Coordenador("Carlos","9876","6789","Departamento de Matematica",4500,2);
         System.out.println();
@@ -57,7 +62,10 @@ public class MainTeste {
         System.out.println("Número de Professores supervisionados: "+coordenador1.getQuantidadeProfessores());
         System.out.println();
         calculadorReembolso.calcular(coordenador1);
+        calculadorReajusteSalarial.reajustar(coordenador1);
+        System.out.println("O novo salário é de R$ "+coordenador1.getSalario());
         coordenador1.adicionarProfessor(professor2);
+        System.out.println("O(s) professor(es) subordinado(s) foi(foram): \n"+professor2.getNome());
 
         Coordenador coordenador2 = new Coordenador("João Gilberto","239876","236789","Departamento de Biologia",4500,3);
         System.out.println();
@@ -70,7 +78,13 @@ public class MainTeste {
         System.out.println("Número de Professores supervisionados: "+coordenador2.getQuantidadeProfessores());
         System.out.println();
         calculadorReembolso.calcular(coordenador2);
+        calculadorReajusteSalarial.reajustar(coordenador2);
+        System.out.println("O novo salário é de R$ "+coordenador2.getSalario());
         coordenador2.adicionarProfessor(professor1);
+        System.out.println("O(s) professor(es) subordinado(s) foi(foram): \n"+professor1.getNome());
+
+
+
 
         Administrativo administrativo1 = new Administrativo("Fabio Melo","43534","345445","Dpto Biologia",2500,"Atendente","Junior");
         System.out.println();
@@ -85,6 +99,9 @@ public class MainTeste {
         System.out.println("Função: "+administrativo1.getFuncaoAdm()+" / Senioridade função: "+administrativo1.getSenioridade());
         System.out.println();
         calculadorReembolso.calcular(administrativo1);
+        calculadorReajusteSalarial.reajustar(administrativo1);
+        System.out.println("O novo salário é de R$ "+administrativo1.getSalario());
+
 
         Administrativo administrativo2 = new Administrativo("Renata Liskov","1243534","24345445","Dpto Matematica",3500,"Atendente","Senior");
         System.out.println();
@@ -94,10 +111,11 @@ public class MainTeste {
         System.out.println("Número RG: "+administrativo2.getRg());
         System.out.println("Setor de Lotação: "+administrativo2.getOrgaoLotacao());
         System.out.println("Salário: "+administrativo2.getSalario());
-        System.out.println("Função: "+administrativo2.getFuncaoAdm()+" / Senioridade função: "+administrativo1.getSenioridade());
+        System.out.println("Função: "+administrativo2.getFuncaoAdm()+" / Senioridade função: "+administrativo2.getSenioridade());
         System.out.println();
         calculadorReembolso.calcular(administrativo2);
-
+        calculadorReajusteSalarial.reajustar(administrativo2);
+        System.out.println("O novo salário é de R$ "+administrativo2.getSalario());
 
 
 

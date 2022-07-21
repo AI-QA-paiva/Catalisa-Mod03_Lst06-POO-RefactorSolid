@@ -38,6 +38,7 @@ public class Professor extends Funcionario {
     void adicionaTurma(Turma turma){
         if(turmasEscolhidas.size()<quantTurmas){
             this.turmasEscolhidas.add(turma);
+            System.out.println("Turma "+turma+" adicionada com sucesso!");
         }
 
     }
