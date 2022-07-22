@@ -44,10 +44,8 @@ public class Professor extends Funcionario {
     }
 
     void adicionaEstagiario(Estagiario estagiario){
-        if(quantEstagiarios < 2){
-            System.out.println("Informe o estagiario subordinado: "+listaEstagiario);
-
-
+        if(quantEstagiarios < 3){
+            this.listaEstagiario.add(estagiario);
 
 //                listaEstagiario.size()<quantEstagiarios){
 //            this.listaEstagiario.add(estagiario);

@@ -30,7 +30,7 @@ public class MainTeste {
         calculadorReembolso.calcular(professor1);
         calculadorReajusteSalarial.reajustar(professor1); // aqui apliquei Solid com principio OCP
         System.out.println("O novo salário é de R$ "+professor1.getSalario());
-        //professor1.adicionaEstagiario();
+
 
         Professor professor2 = new Professor("Pedro Paiva","3412345","5454321","Depto Matematica",3500,"Mestre","Geometria");
         System.out.println("...............................................................................");
@@ -103,8 +103,9 @@ public class MainTeste {
         System.out.println("O novo salário é de R$ "+coordenador2.getSalario());
         coordenador2.adicionarProfessor(professor1);
         coordenador2.adicionarProfessor(professor3);
+        coordenador2.adicionarProfessor(professor2);
         System.out.println();
-        System.out.println("O(s) professor(es) subordinado(s): \n"+professor1.getNome()+"\n"+professor3.getNome());
+        System.out.println("O(s) professor(es) subordinado(s): \n"+professor1.getNome()+"\n"+professor3.getNome()+"\n"+professor2.getNome());
 
 
         Administrativo administrativo1 = new Administrativo("Fabio Melo","43534","345445","Dpto Biologia",2500,"Atendente","Junior");
@@ -162,6 +163,32 @@ public class MainTeste {
         System.out.println("Valor da Bolsa Estágio é de; R$ "+estagiario2.getBolsaEstagio());
         calculadorReembolso.calcular(estagiario2);
 
+
+        Estagiario estagiario3 = new Estagiario("Silvanir Viana","1198765432-19","115544332211","Depto Matemática",650);
+        System.out.println("...............................................................................");
+        System.out.println("Estagiario 3: "+estagiario3.getNome());
+        System.out.println("Número CPF: "+estagiario3.getCpf());
+        System.out.println("Número RG: "+estagiario3.getRg());
+        System.out.println("Setor de Lotação: "+estagiario3.getOrgaoLotacao());
+        System.out.println();
+        System.out.println("Valor da Bolsa Estágio é de; R$ "+estagiario3.getBolsaEstagio());
+        calculadorReembolso.calcular(estagiario3);
+
+
+
+
+        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("Lista de professores e seus Estagiários:");
+        System.out.println();
+        professor1.adicionaEstagiario(estagiario1);
+        System.out.println("O professor, "+professor1.getNome()+" tem o(s) seguinte(s) estagiário(s): \n"+estagiario1.getNome());
+
+        System.out.println();
+        professor2.adicionaEstagiario(estagiario2);
+        professor2.adicionaEstagiario(estagiario1);
+        professor2.adicionaEstagiario(estagiario3);
+
+        System.out.println("O professor, "+professor2.getNome()+" tem o(s) seguinte(s) estagiário(s): \n"+estagiario2.getNome()+"\n"+estagiario1.getNome()+"\n"+estagiario3.getNome());
 
     }
 }
