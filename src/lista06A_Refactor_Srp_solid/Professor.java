@@ -7,12 +7,12 @@ public class Professor extends Funcionario {
 
     private String nivelGraduacao, disciplinaEnsina;
     private int quantAlunos, quantTurmas;
-    private int quantEstagiarios = 2;
+    private int quantEstagiarios =2;
 
 
     Set<Professor> listaProfessor = new HashSet<Professor>();
     private Set<Turma> turmasEscolhidas = new HashSet<>();
-    private Set<Estagiario> estagiarioEscolhido = new HashSet<>();
+    private Set<Estagiario> listaEstagiario = new HashSet<>();
 
 
 
@@ -44,8 +44,13 @@ public class Professor extends Funcionario {
     }
 
     void adicionaEstagiario(Estagiario estagiario){
-        if(estagiarioEscolhido.size()<quantEstagiarios){
-            this.estagiarioEscolhido.add(estagiario);
+        if(quantEstagiarios < 2){
+            System.out.println("Informe o estagiario subordinado: "+listaEstagiario);
+
+
+
+//                listaEstagiario.size()<quantEstagiarios){
+//            this.listaEstagiario.add(estagiario);
         }
 
     }

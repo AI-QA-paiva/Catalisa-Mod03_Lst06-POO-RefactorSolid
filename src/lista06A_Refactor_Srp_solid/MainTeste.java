@@ -12,9 +12,9 @@ public class MainTeste {
         CalculadorReajusteSalarial calculadorReajusteSalarial = new CalculadorReajusteSalarial();
         Turma turma = new Turma();
 
-        Professor professor1 = new Professor("Felipe Silveira","12345","54321","Biologia",3000,"Mestre","Patologia");
-        System.out.println();
-        System.out.println("Lista Professor");
+        Professor professor1 = new Professor("Felipe Silveira","12345","54321","Depto Biologia",3000,"Mestre","Patologia");
+        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("Lista Professor --------------------------------");
         System.out.println();
         System.out.println("Os dados cadastrados são: ");
         System.out.println("Nome: "+professor1.getNome());
@@ -30,9 +30,10 @@ public class MainTeste {
         calculadorReembolso.calcular(professor1);
         calculadorReajusteSalarial.reajustar(professor1); // aqui apliquei Solid com principio OCP
         System.out.println("O novo salário é de R$ "+professor1.getSalario());
+        //professor1.adicionaEstagiario();
 
-        Professor professor2 = new Professor("Pedro Paiva","3412345","5454321","Matematica",3500,"Mestre","Geometria");
-        System.out.println();
+        Professor professor2 = new Professor("Pedro Paiva","3412345","5454321","Depto Matematica",3500,"Mestre","Geometria");
+        System.out.println("...............................................................................");
         System.out.println("Os dados cadastrados são: ");
         System.out.println("Nome: "+professor2.getNome());
         System.out.println("Número CPF: "+professor2.getCpf());
@@ -49,9 +50,29 @@ public class MainTeste {
         System.out.println("O novo salário é de R$ "+professor2.getSalario());
 
 
-        Coordenador coordenador1 = new Coordenador("Carlos","9876","6789","Departamento de Matematica",4500,2);
+        Professor professor3 = new Professor("Carlos Silva","13412345","15454321","Depto Biologia",3500,"Mestre","Geometria");
+        System.out.println("...............................................................................");
+        System.out.println("Os dados cadastrados são: ");
+        System.out.println("Nome: "+professor3.getNome());
+        System.out.println("Número CPF: "+professor3.getCpf());
+        System.out.println("Número RG: "+professor3.getRg());
+        System.out.println("Salário: R$ "+professor3.getSalario());
+        System.out.println("Formação Acadêmica: "+professor3.getNivelGraduacao());
+        System.out.println("Setor de Lotação: "+professor3.getOrgaoLotacao());
+        System.out.println("Disciplina ministrada: "+professor3.getDisciplinaEnsina());
         System.out.println();
-        System.out.println("Lista Coordenador");
+        professor3.adicionaTurma(turma);
+        System.out.println("A turma adicionada foi: "+professor3.getTurmasEscolhidas());
+        calculadorReembolso.calcular(professor3);
+        calculadorReajusteSalarial.reajustar(professor3);
+        System.out.println("O novo salário é de R$ "+professor2.getSalario());
+
+
+
+
+        Coordenador coordenador1 = new Coordenador("Carlos","9876","6789","Departamento de Matematica",4500,2);
+        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("Lista Coordenador --------------------------------");
         System.out.println();
         System.out.println("Os dados cadastrados são: ");
         System.out.println("Nome: "+coordenador1.getNome());
@@ -65,10 +86,10 @@ public class MainTeste {
         calculadorReajusteSalarial.reajustar(coordenador1);
         System.out.println("O novo salário é de R$ "+coordenador1.getSalario());
         coordenador1.adicionarProfessor(professor2);
-        System.out.println("O(s) professor(es) subordinado(s) foi(foram): \n"+professor2.getNome());
+        System.out.println("O(s) professor(es) subordinado(s): \n"+professor2.getNome());
 
         Coordenador coordenador2 = new Coordenador("João Gilberto","239876","236789","Departamento de Biologia",4500,3);
-        System.out.println();
+        System.out.println("...............................................................................");
         System.out.println("Os dados cadastrados são: ");
         System.out.println("Nome: "+coordenador2.getNome());
         System.out.println("Número CPF: "+coordenador2.getCpf());
@@ -81,14 +102,14 @@ public class MainTeste {
         calculadorReajusteSalarial.reajustar(coordenador2);
         System.out.println("O novo salário é de R$ "+coordenador2.getSalario());
         coordenador2.adicionarProfessor(professor1);
-        System.out.println("O(s) professor(es) subordinado(s) foi(foram): \n"+professor1.getNome());
-
-
+        coordenador2.adicionarProfessor(professor3);
+        System.out.println();
+        System.out.println("O(s) professor(es) subordinado(s): \n"+professor1.getNome()+"\n"+professor3.getNome());
 
 
         Administrativo administrativo1 = new Administrativo("Fabio Melo","43534","345445","Dpto Biologia",2500,"Atendente","Junior");
-        System.out.println();
-        System.out.println("Lista Administrativos");
+        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("Lista Administrativos --------------------------------");
         System.out.println();
         System.out.println("Os dados cadastrados são: ");
         System.out.println("Nome: "+administrativo1.getNome());
@@ -104,7 +125,7 @@ public class MainTeste {
 
 
         Administrativo administrativo2 = new Administrativo("Renata Liskov","1243534","24345445","Dpto Matematica",3500,"Atendente","Senior");
-        System.out.println();
+        System.out.println("...............................................................................");
         System.out.println("Os dados cadastrados são: ");
         System.out.println("Nome: "+administrativo2.getNome());
         System.out.println("Número CPF: "+administrativo2.getCpf());
@@ -119,9 +140,9 @@ public class MainTeste {
 
 
 
-        Estagiario estagiario1 = new Estagiario("Amanda Matias","12345600-45","1122334455","Depto de Biolgogia",650);
-        System.out.println();
-        System.out.println("Lista Estagiários");
+        Estagiario estagiario1 = new Estagiario("Amanda Matias","12345600-45","1122334455","Depto de Biologia",650);
+        System.out.println("--------------------------------------------------------------------------------------------");
+        System.out.println("Lista Estagiários --------------------------------");
         System.out.println();
         System.out.println("Estagiario 1: "+estagiario1.getNome());
         System.out.println("Número CPF: "+estagiario1.getCpf());
@@ -132,7 +153,7 @@ public class MainTeste {
         calculadorReembolso.calcular(estagiario1);
 
         Estagiario estagiario2 = new Estagiario("Julio Verner","98765432-19","5544332211","Depto Matemática",650);
-        System.out.println();
+        System.out.println("...............................................................................");
         System.out.println("Estagiario 2: "+estagiario2.getNome());
         System.out.println("Número CPF: "+estagiario2.getCpf());
         System.out.println("Número RG: "+estagiario2.getRg());
