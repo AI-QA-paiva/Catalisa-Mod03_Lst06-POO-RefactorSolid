@@ -28,7 +28,7 @@ public class MainTeste {
         professor1.adicionaTurma(turma);
         System.out.println("A turma adicionada foi: "+professor1.getTurmasEscolhidas());
         calculadorReembolso.calcular(professor1);
-        calculadorReajusteSalarial.reajustar(professor1);
+        calculadorReajusteSalarial.reajustar(professor1); // aqui apliquei Solid com principio OCP
         System.out.println("O novo salário é de R$ "+professor1.getSalario());
 
         Professor professor2 = new Professor("Pedro Paiva","3412345","5454321","Matematica",3500,"Mestre","Geometria");
@@ -119,20 +119,26 @@ public class MainTeste {
 
 
 
-        Estagiario estagiario1 = new Estagiario("Amanda Matias",600);
+        Estagiario estagiario1 = new Estagiario("Amanda Matias","12345600-45","1122334455","Depto de Biolgogia",650);
         System.out.println();
         System.out.println("Lista Estagiários");
         System.out.println();
         System.out.println("Estagiario 1: "+estagiario1.getNome());
-        System.out.println("Valor da Bolsa Estágio é de; R$ "+estagiario1.getValorBolsa());
+        System.out.println("Número CPF: "+estagiario1.getCpf());
+        System.out.println("Número RG: "+estagiario1.getRg());
+        System.out.println("Setor de Lotação: "+estagiario1.getOrgaoLotacao());
         System.out.println();
+        System.out.println("Valor da Bolsa Estágio é de; R$ "+estagiario1.getBolsaEstagio());
         calculadorReembolso.calcular(estagiario1);
 
-        Estagiario estagiario2 = new Estagiario("Julio Verner",600);
+        Estagiario estagiario2 = new Estagiario("Julio Verner","98765432-19","5544332211","Depto Matemática",650);
         System.out.println();
         System.out.println("Estagiario 2: "+estagiario2.getNome());
-        System.out.println("Valor da Bolsa Estágio é de; R$ "+estagiario2.getValorBolsa());
+        System.out.println("Número CPF: "+estagiario2.getCpf());
+        System.out.println("Número RG: "+estagiario2.getRg());
+        System.out.println("Setor de Lotação: "+estagiario2.getOrgaoLotacao());
         System.out.println();
+        System.out.println("Valor da Bolsa Estágio é de; R$ "+estagiario2.getBolsaEstagio());
         calculadorReembolso.calcular(estagiario2);
 
 
